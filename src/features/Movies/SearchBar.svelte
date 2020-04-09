@@ -5,7 +5,7 @@
     BACKDROP_BASE_URL
   } from "../../service/movie-api";
 
-  let term = "minion";
+  let term = "star";
 
   fetchMovies(term);
 

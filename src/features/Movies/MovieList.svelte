@@ -1,4 +1,5 @@
 <script>
+  import { fly } from "svelte/transition";
   import { movies, movieStore } from "../../stores/movies";
   import MovieCard from "./MovieCard.svelte";
 
@@ -11,7 +12,7 @@
 
 <main>
   {#if $movies.length}
-    <ul>
+    <ul transition:fly={{ y: -20, duration: 400 }}>
       {#each $movies as movie (movie.id)}
         <li
           on:click={setCurrent(movie.id)}
