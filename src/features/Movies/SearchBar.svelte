@@ -1,15 +1,28 @@
 <script>
-  import { fetchMovies } from "../../service/movie-api";
-  let term = "";
+  import {
+    fetchMovies,
+    resetMovies,
+    BACKDROP_BASE_URL
+  } from "../../service/movie-api";
+
+  let term = "star";
+
+  fetchMovies(term);
+
   const search = () => {
-    fetchMovies(term).then(({ data: { results } }) => {
-      // eslint-disable-next-line
-      console.log(results);
-    });
+    if (term) {
+      fetchMovies(term);
+    }
+  };
+
+  const checkTerm = () => {
+    if (!term) {
+      resetMovies();
+    }
   };
 </script>
 
-<div class="flex mt-1 rounded-md shadow-sm">
+<form on:submit|preventDefault={search} class="flex mt-1 rounded-md shadow-sm">
   <div class="relative flex-grow focus-within:z-10">
     <div
       class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
@@ -24,12 +37,13 @@
     </div>
     <input
       bind:value={term}
-      id="email"
+      on:input={checkTerm}
+      type="search"
       class="block w-full pl-10 transition duration-150 ease-in-out rounded-none form-input rounded-l-md sm:text-sm sm:leading-5"
       placeholder="Digite o título do filme" />
   </div>
   <button
-    on:click={search}
+    type="submit"
     class="relative inline-flex items-center px-4 py-2 -ml-px text-sm font-medium leading-5 text-gray-700 transition duration-150 ease-in-out border border-gray-300 rounded-r-md bg-gray-50 hover:text-gray-500 hover:bg-white focus:outline-none focus:shadow-outline-blue focus:border-blue-300 active:bg-gray-100 active:text-gray-700">
     <svg class="w-6 h-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
       <path
@@ -37,4 +51,4 @@
         0 1 0 1.4l-7 7a1 1 0 0 1-1.42-1.4l5.3-5.3z" />
     </svg>
   </button>
-</div>
+</form>

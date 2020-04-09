@@ -1,9 +1,7 @@
 <script>
-  import SearchBar from "./features/Movies/SearchBar.svelte";
+  import MoviesContainer from "./features/Movies/MoviesContainer.svelte";
 </script>
 
 <main>
-  <div class="container mx-auto">
-    <SearchBar />
-  </div>
+  <MoviesContainer />
 </main>
