@@ -2,7 +2,7 @@ import { writable, derived } from "svelte/store";
 
 export const initialState = {
   movies: [],
-  term: "",
+  isSearch: false,
 };
 
 export const movieStore = writable({ ...initialState });

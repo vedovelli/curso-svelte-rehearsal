@@ -13,6 +13,7 @@ export const fetchMovies = async (term) => {
 
   movieStore.set({
     ...initialState,
+    isSearch: true,
     movies,
   });
 };
