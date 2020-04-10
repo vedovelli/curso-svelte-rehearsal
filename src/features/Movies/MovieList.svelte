@@ -14,7 +14,8 @@
   {#if $movies.length}
     <ul
       class="m-0 xl:grid xl:grid-cols-2"
-      transition:fly={{ y: -20, duration: 400 }}>
+      in:fly={{ y: -20, duration: 400 }}
+      out:fly={{ y: 20, duration: 400 }}>
       {#each $movies as movie (movie.id)}
         <li
           on:click={setCurrent(movie.id)}
