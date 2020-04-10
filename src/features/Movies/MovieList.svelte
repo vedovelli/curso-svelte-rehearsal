@@ -27,7 +27,7 @@
       {/each}
     </ul>
   {:else if $movieStore.isSearch}
-    <h3 class="py-6 mt-3 text-center rounded-lg shadow bg-gray-50">
+    <h3 class="py-6 mt-3 text-center shadow lg:rounded-lg bg-gray-50">
       Nenhum filme encontrado
     </h3>
   {/if}
