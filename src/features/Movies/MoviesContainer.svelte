@@ -4,10 +4,12 @@
 </script>
 
 <div class="container mx-auto">
-  <div class="mt-3">
-    <SearchBar />
-  </div>
-  <div class="mb-16">
-    <MovieList />
+  <div class="md:mx-4">
+    <div class="mt-3">
+      <SearchBar />
+    </div>
+    <div class="mb-16">
+      <MovieList />
+    </div>
   </div>
 </div>
